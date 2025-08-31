@@ -1,412 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RespiroVecino — Respiro on-demand por WhatsApp para cuidadores</title>
-  <meta name="description" content="Servicio municipal de respiro on-demand por WhatsApp. Matching rápido con cuidadores verificados en 24–72 h.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root { color-scheme: light; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
-    /* Imagen de hero: se utiliza la URL proporcionada como background con degradado de apoyo */
-    .hero-bg {
-      background-image:
-        linear-gradient( to bottom right, rgba(5, 42, 73, .75), rgba(5, 42, 73, .45) ),
-        url('https://www.freepik.es/foto-gratis/equipo-joven-trabajando-juntos-usando-computadora-portatil_5913093.htm#fromView=search&page=1&position=42&uuid=4deae99a-82dd-45af-8396-59e9e653d89b&query=expats+working');
-      background-size: cover; background-position: center; background-repeat: no-repeat;
-    }
-    /* Tarjetas flotantes sutiles */
-    .card { box-shadow: 0 10px 25px rgba(2, 6, 23, .08); }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apoyo a Cuidadores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-gray-800">
 
-<body class="bg-slate-50 text-slate-800">
-  <!-- =========================================
-       CONFIG: endpoint del formulario
-       Reemplaza el valor de ENDPOINT_URL por el endpoint que nos proporciones.
-       Si ENDPOINT_URL se queda vacío (""), el envío hará fallback a un "mailto:" con los datos.
-  ========================================== -->
-  <script>
-    const ENDPOINT_URL = ""; // ← Pega aquí tu endpoint cuando lo tengas (p. ej., "https://api.tu-dominio.com/form")
-    const CONTACT_FALLBACK_EMAIL = "amgseosem@gmail.com";
-  </script>
+    <!-- HERO -->
+    <section
+      class="relative h-screen bg-cover bg-center flex items-center justify-center"
+      style="background-image: url('https://img.freepik.com/foto-gratis/mujer-sonriente-tiro-medio-posando_13704692.htm');"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="relative z-10 text-center px-4 md:px-10">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Apoyando a quienes cuidan<br />cada día con dedicación
+        </h1>
+        <p class="text-lg md:text-xl text-white mb-8">
+          Mejoramos las condiciones de los cuidadores profesionales y familiares con soluciones innovadoras.
+        </p>
+        <a href="#contacto" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition">
+          ¡Quiero saber más!
+        </a>
+      </div>
+    </section>
 
-  <!-- ============ NAV ============ -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-sky-600 text-white font-bold">RV</span>
-        <span class="font-extrabold tracking-tight text-slate-900 text-lg">RespiroVecino</span>
-      </a>
-      <nav class="hidden sm:flex items-center gap-6 text-sm">
-        <a href="#como-funciona" class="hover:text-sky-700">Cómo funciona</a>
-        <a href="#beneficios" class="hover:text-sky-700">Beneficios</a>
-        <a href="#galeria" class="hover:text-sky-700">Galería</a>
-        <a href="#contacto" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-600 text-white font-semibold hover:bg-sky-700 transition">Solicitar respiro</a>
-      </nav>
-      <a href="#contacto" class="sm:hidden inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-sky-600 text-white text-sm font-semibold">Contactar</a>
-    </div>
-  </header>
+    <!-- SOBRE NOSOTROS -->
+    <section class="py-16 px-6 md:px-20 bg-gray-50 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Nuestra misión</h2>
+      <p class="text-lg max-w-3xl mx-auto text-gray-700">
+        Ayudamos a mejorar el día a día de cuidadores y cuidadoras, facilitando recursos, herramientas y apoyo emocional
+        para afrontar sus retos con mayor bienestar y calidad de vida.
+      </p>
+      <div class="mt-12 grid md:grid-cols-3 gap-8">
+        <img
+          class="w-full h-64 object-cover rounded-xl shadow-lg"
+          src="https://img.freepik.com/foto-gratis/enfermera-sonriente-que-apoya-mujer-mayor-lisiada-que-sienta-silla-rueda_2676012.htm"
+          alt="Cuidadora apoyando"
+        />
+        <img
+          class="w-full h-64 object-cover rounded-xl shadow-lg"
+          src="https://img.freepik.com/foto-gratis/anciana-feliz-hogar-ancianos-sentada-sofa-hablando-su-cuidadora-mujer-jubilada-muletas_28708530.htm"
+          alt="Cuidadora conversando"
+        />
+        <img
+          class="w-full h-64 object-cover rounded-xl shadow-lg"
+          src="https://img.freepik.com/foto-gratis/mujer-sonriente-tiro-medio-posando_13704692.htm"
+          alt="Cuidadora sonriente"
+        />
+      </div>
+    </section>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 sm:pt-24 sm:pb-28">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div class="text-white">
-          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 ring-1 ring-white/20 text-xs uppercase tracking-wider">Piloto municipal</span>
-          <h1 class="mt-5 text-4xl sm:text-5xl font-extrabold leading-tight">
-            Respiro on-demand por <span class="text-sky-300">WhatsApp</span> para quien cuida
-          </h1>
-          <p class="mt-5 text-lg text-white/90 max-w-xl">
-            Pide cobertura de 2–6 horas en 24–72 h. Cuidadores verificados del barrio, seguimiento sencillo y valoración al cierre.
-          </p>
-          <div class="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contacto" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-slate-900 font-semibold hover:bg-slate-100 transition">Solicitar respiro</a>
-            <a href="#como-funciona" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl ring-1 ring-white/40 text-white font-semibold hover:bg-white/10 transition">Ver cómo funciona</a>
+    <!-- FORMULARIO DE CONTACTO -->
+    <section id="contacto" class="py-20 px-6 md:px-20 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Contáctanos</h2>
+        <form 
+          action="https://tu-endpoint-aqui.com/formulario" 
+          method="POST" 
+          class="space-y-6 bg-gray-100 p-8 rounded-xl shadow-lg"
+        >
+          <div>
+            <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500"
+            />
           </div>
-          <p class="mt-6 text-sm text-white/80">Contacto: <a class="underline hover:text-white" href="mailto:amgseosem@gmail.com">amgseosem@gmail.com</a></p>
-        </div>
 
-        <!-- Tarjeta rápida (CTA secundaria) -->
-        <div class="bg-white/95 rounded-2xl p-6 card">
-          <h3 class="text-xl font-bold text-slate-900">¿Necesitas un respiro esta semana?</h3>
-          <p class="mt-2 text-slate-600">Cuéntanos tu franja y el tipo de apoyo. Te proponemos 1–2 perfiles en tu zona.</p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-sky-600"></span> Cobertura orientativa en 24–72 h</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-sky-600"></span> Cuidadores verificados y valorados</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-sky-600"></span> WhatsApp: sin apps nuevas</li>
-          </ul>
-          <a href="#contacto" class="mt-6 inline-flex w-full items-center justify-center gap-2 px-5 py-3 rounded-xl bg-sky-600 text-white font-semibold hover:bg-sky-700 transition">Ir al formulario</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ BENEFICIOS ============ -->
-  <section id="beneficios" class="py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Por qué RespiroVecino</h2>
-        <p class="mt-3 text-slate-600">Diseñado con y para cuidadores familiares, profesionales y trabajadoras sociales.</p>
-      </div>
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl p-6 card">
-          <h3 class="font-bold text-lg">Rápido y cercano</h3>
-          <p class="mt-2 text-slate-600">Matching en tu barrio con disponibilidad real, sin llamadas interminables.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 card">
-          <h3 class="font-bold text-lg">Confianza verificada</h3>
-          <p class="mt-2 text-slate-600">Perfiles con referencias y verificación básica, valoración tras cada servicio.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 card">
-          <h3 class="font-bold text-lg">WhatsApp first</h3>
-          <p class="mt-2 text-slate-600">Funciona donde ya estás. Sin descargas, sin curvas de aprendizaje.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 card">
-          <h3 class="font-bold text-lg">Transparencia</h3>
-          <p class="mt-2 text-slate-600">Confirmación con condiciones claras y valoración visible.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 card">
-          <h3 class="font-bold text-lg">Medible desde el día 1</h3>
-          <p class="mt-2 text-slate-600">Tiempos de respuesta y satisfacción para mejorar el servicio.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 card">
-          <h3 class="font-bold text-lg">Compatible con programas municipales</h3>
-          <p class="mt-2 text-slate-600">Se integra como canal de derivación y refuerzo a recursos existentes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CÓMO FUNCIONA ============ -->
-  <section id="como-funciona" class="py-16 sm:py-24 bg-gradient-to-b from-white to-slate-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Cómo funciona</h2>
-        <p class="mt-3 text-slate-600">Un flujo simple para pedir y confirmar cobertura en 24–72 h.</p>
-      </div>
-      <div class="mt-12 grid gap-6 lg:grid-cols-4 sm:grid-cols-2">
-        <div class="bg-white rounded-2xl p-6 card">
-          <div class="h-10 w-10 rounded-xl bg-sky-100 text-sky-700 font-extrabold flex items-center justify-center">1</div>
-          <h3 class="mt-4 font-bold">Escribe por WhatsApp</h3>
-          <p class="mt-2 text-slate-600">Indica franja, barrio y tipo de apoyo.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 card">
-          <div class="h-10 w-10 rounded-xl bg-sky-100 text-sky-700 font-extrabold flex items-center justify-center">2</div>
-          <h3 class="mt-4 font-bold">Matching cercano</h3>
-          <p class="mt-2 text-slate-600">Te proponemos 1–2 perfiles disponibles.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 card">
-          <div class="h-10 w-10 rounded-xl bg-sky-100 text-sky-700 font-extrabold flex items-center justify-center">3</div>
-          <h3 class="mt-4 font-bold">Confirmas en un clic</h3>
-          <p class="mt-2 text-slate-600">Recibes resumen y contacto.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 card">
-          <div class="h-10 w-10 rounded-xl bg-sky-100 text-sky-700 font-extrabold flex items-center justify-center">4</div>
-          <h3 class="mt-4 font-bold">Valoras el servicio</h3>
-          <p class="mt-2 text-slate-600">Mejora continua y confianza.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ GALERÍA (usa las URLs proporcionadas) ============ -->
-  <section id="galeria" class="py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Cuidado en comunidad</h2>
-        <p class="mt-3 text-slate-600">Imágenes ilustrativas del trabajo coordinado y el apoyo entre personas.</p>
-      </div>
-
-      <!-- Nota: las URLs de Freepik enlazan a páginas de recurso.
-           Se muestran como <img> con fallback visual (anillo/ratio) y figcaption con crédito.
-           Si dispones de la URL directa del archivo, reemplázala en los src. -->
-      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <figure class="bg-white rounded-2xl overflow-hidden card">
-          <div class="aspect-[4/3] bg-slate-200 relative">
-            <img loading="lazy" class="absolute inset-0 h-full w-full object-cover"
-                 src="https://www.freepik.es/foto-gratis/equipo-joven-trabajando-juntos-usando-computadora-portatil_5913093.htm#fromView=search&page=1&position=42&uuid=4deae99a-82dd-45af-8396-59e9e653d89b&query=expats+working"
-                 alt="Equipo joven trabajando juntos con portátil — Freepik" />
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500"
+            />
           </div>
-          <figcaption class="px-4 py-3 text-sm text-slate-600">Crédito imagen: Freepik</figcaption>
-        </figure>
 
-        <figure class="bg-white rounded-2xl overflow-hidden card">
-          <div class="aspect-[4/3] bg-slate-200 relative">
-            <img loading="lazy" class="absolute inset-0 h-full w-full object-cover"
-                 src="https://www.freepik.es/foto-gratis/mujeres-cafe-discutir-libro_4605342.htm#fromView=search&page=2&position=32&uuid=4deae99a-82dd-45af-8396-59e9e653d89b&query=expats+working"
-                 alt="Mujeres en café discutiendo un libro — Freepik" />
+          <div>
+            <label for="mensaje" class="block text-sm font-medium text-gray-700">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              required
+              class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500"
+            ></textarea>
           </div>
-          <figcaption class="px-4 py-3 text-sm text-slate-600">Crédito imagen: Freepik</figcaption>
-        </figure>
 
-        <figure class="bg-white rounded-2xl overflow-hidden card">
-          <div class="aspect-[4/3] bg-slate-200 relative">
-            <img loading="lazy" class="absolute inset-0 h-full w-full object-cover"
-                 src="https://www.freepik.es/foto-gratis/grupo-amigos-que-planean-viaje-cafe_13839025.htm#fromView=search&page=2&position=40&uuid=4deae99a-82dd-45af-8396-59e9e653d89b&query=expats+working"
-                 alt="Grupo de amigos planificando viaje en un café — Freepik" />
+          <div class="text-center">
+            <button
+              type="submit"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition"
+            >
+              Enviar mensaje
+            </button>
           </div>
-          <figcaption class="px-4 py-3 text-sm text-slate-600">Crédito imagen: Freepik</figcaption>
-        </figure>
+        </form>
+
+        <p class="text-center mt-6 text-sm text-gray-500">
+          También puedes escribirnos directamente a <a href="mailto:amgseosem@gmail.com" class="underline text-blue-600">amgseosem@gmail.com</a>
+        </p>
       </div>
-      <p class="mt-4 text-xs text-slate-500">*Si cuentas con las URLs directas a archivo (JPG/PNG), sustitúyelas en los <code>src</code> para mejorar el rendimiento.</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ CONTACTO / FORMULARIO ============ -->
-  <section id="contacto" class="py-16 sm:py-24 bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-10">
-        <div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Solicita un respiro</h2>
-          <p class="mt-3 text-slate-600">Cuéntanos qué necesitas y tu disponibilidad. Te contactaremos para proponerte opciones cercanas.</p>
-
-          <div class="mt-8 space-y-4 text-sm text-slate-700">
-            <div class="flex items-start gap-3">
-              <span class="mt-1 h-2 w-2 bg-sky-600 rounded-full"></span>
-              <p><strong>Urgencia:</strong> intentamos cubrir en 24–72 h según disponibilidad del barrio.</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="mt-1 h-2 w-2 bg-sky-600 rounded-full"></span>
-              <p><strong>Ámbito:</strong> acompañamiento, supervisión, tareas ligeras y movilidad básica (no técnicas sanitarias).</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="mt-1 h-2 w-2 bg-sky-600 rounded-full"></span>
-              <p><strong>Contacto:</strong> <a class="underline" href="mailto:amgseosem@gmail.com">amgseosem@gmail.com</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 card">
-          <form id="respiroForm" class="space-y-5" novalidate>
-            <!-- Datos personales -->
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Nombre y apellidos</label>
-                <input name="nombre" type="text" required placeholder="Tu nombre" class="mt-1 w-full rounded-xl border-slate-300 focus:border-sky-600 focus:ring-sky-600"/>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Email</label>
-                <input name="email" type="email" required placeholder="tucorreo@ejemplo.com" class="mt-1 w-full rounded-xl border-slate-300 focus:border-sky-600 focus:ring-sky-600"/>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Teléfono</label>
-                <input name="telefono" type="tel" required placeholder="+34 6XX XXX XXX" class="mt-1 w-full rounded-xl border-slate-300 focus:border-sky-600 focus:ring-sky-600"/>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Rol</label>
-                <select name="rol" class="mt-1 w-full rounded-xl border-slate-300 focus:border-sky-600 focus:ring-sky-600">
-                  <option>Cuidador/a familiar</option>
-                  <option>Cuidador/a profesional</option>
-                  <option>Trabajadora social / técnico municipal</option>
-                  <option>Otro</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Ubicación y tiempos -->
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Código postal</label>
-                <input name="cp" type="text" required placeholder="Ej. 41001" class="mt-1 w-full rounded-xl border-slate-300 focus:border-sky-600 focus:ring-sky-600"/>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Ciudad</label>
-                <input name="ciudad" type="text" required placeholder="Sevilla" class="mt-1 w-full rounded-xl border-slate-300 focus:border-sky-600 focus:ring-sky-600"/>
-              </div>
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Fecha y hora deseada</label>
-                <input name="fecha_hora" type="datetime-local" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-sky-600 focus:ring-sky-600"/>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Duración aproximada</label>
-                <select name="duracion" class="mt-1 w-full rounded-xl border-slate-300 focus:border-sky-600 focus:ring-sky-600">
-                  <option>2 horas</option>
-                  <option>3 horas</option>
-                  <option>4 horas</option>
-                  <option>6 horas</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Tipo de apoyo -->
-            <div>
-              <label class="block text-sm font-medium text-slate-700">Tipo de apoyo</label>
-              <div class="mt-2 grid sm:grid-cols-2 gap-3">
-                <label class="inline-flex items-center gap-2"><input type="checkbox" name="apoyo" value="Acompañamiento" class="rounded text-sky-600"> Acompañamiento</label>
-                <label class="inline-flex items-center gap-2"><input type="checkbox" name="apoyo" value="Supervisión" class="rounded text-sky-600"> Supervisión</label>
-                <label class="inline-flex items-center gap-2"><input type="checkbox" name="apoyo" value="Tareas ligeras" class="rounded text-sky-600"> Tareas ligeras</label>
-                <label class="inline-flex items-center gap-2"><input type="checkbox" name="apoyo" value="Movilidad básica" class="rounded text-sky-600"> Movilidad básica</label>
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-sm font-medium text-slate-700">Describe tu necesidad</label>
-              <textarea name="mensaje" rows="4" placeholder="Cuéntanos a quién cuidas, rutinas, preferencias…" class="mt-1 w-full rounded-xl border-slate-300 focus:border-sky-600 focus:ring-sky-600"></textarea>
-            </div>
-
-            <div class="flex items-start gap-3">
-              <input id="consent" type="checkbox" class="mt-1 rounded text-sky-600" required>
-              <label for="consent" class="text-sm text-slate-600">He leído y acepto el tratamiento de mis datos para gestionar mi solicitud.</label>
-            </div>
-
-            <input type="hidden" name="source_page" value="RespiroVecino LP v1" />
-
-            <div class="flex items-center gap-3">
-              <button type="submit" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-sky-600 text-white font-semibold hover:bg-sky-700 transition">
-                Enviar solicitud
-              </button>
-              <span id="formStatus" class="text-sm"></span>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="py-10 border-t border-slate-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-slate-600">&copy; <span id="year"></span> RespiroVecino. Todos los derechos reservados.</p>
-      <div class="text-sm text-slate-600">
-        Contacto: <a href="mailto:amgseosem@gmail.com" class="underline">amgseosem@gmail.com</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ FAB CTA ============ -->
-  <a href="#contacto" class="fixed bottom-5 right-5 inline-flex items-center gap-2 px-4 py-3 rounded-full bg-sky-600 text-white shadow-lg hover:bg-sky-700">
-    Solicitar respiro
-  </a>
-
-  <!-- ============ JS del formulario ============ -->
-  <script>
-    (function () {
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      const form = document.getElementById('respiroForm');
-      const status = document.getElementById('formStatus');
-
-      function serializeForm(formEl) {
-        const data = new FormData(formEl);
-        // Recoger checkboxes "apoyo" en array
-        const apoyos = data.getAll('apoyo');
-        const payload = {
-          nombre: data.get('nombre') || '',
-          email: data.get('email') || '',
-          telefono: data.get('telefono') || '',
-          rol: data.get('rol') || '',
-          cp: data.get('cp') || '',
-          ciudad: data.get('ciudad') || '',
-          fecha_hora: data.get('fecha_hora') || '',
-          duracion: data.get('duracion') || '',
-          apoyo: apoyos,
-          mensaje: data.get('mensaje') || '',
-          consent: document.getElementById('consent')?.checked === true,
-          source_page: data.get('source_page') || '',
-          timestamp: new Date().toISOString()
-        };
-        return payload;
-      }
-
-      function toMailtoBody(payload) {
-        const lines = [];
-        Object.entries(payload).forEach(([k, v]) => {
-          lines.push(`${k}: ${Array.isArray(v) ? v.join(', ') : v}`);
-        });
-        return encodeURIComponent(lines.join('\n'));
-      }
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        status.textContent = "";
-        const payload = serializeForm(form);
-
-        // Validación mínima
-        if (!payload.nombre || !payload.email || !payload.telefono || !payload.cp || !payload.ciudad || !payload.fecha_hora || !payload.consent) {
-          status.className = "text-sm text-rose-600";
-          status.textContent = "Revisa los campos obligatorios.";
-          return;
-        }
-
-        // Si existe ENDPOINT_URL, intentamos enviar vía fetch JSON
-        if (ENDPOINT_URL && ENDPOINT_URL.trim() !== "") {
-          try {
-            status.className = "text-sm text-slate-600";
-            status.textContent = "Enviando…";
-
-            const res = await fetch(ENDPOINT_URL, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(payload)
-            });
-
-            if (!res.ok) throw new Error("Error en el envío");
-            status.className = "text-sm text-emerald-700";
-            status.textContent = "¡Solicitud enviada! Te contactaremos pronto.";
-            form.reset();
-            return;
-          } catch (err) {
-            console.error(err);
-            status.className = "text-sm text-rose-600";
-            status.textContent = "No se pudo enviar al endpoint. Usaremos el correo como alternativa…";
-          }
-        }
-
-        // Fallback: mailto con el contenido
-        const subject = encodeURIComponent("Solicitud de Respiro — RespiroVecino");
-        const body = toMailtoBody(payload);
-        window.location.href = `mailto:${CONTACT_FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
-      });
-    })();
-  </script>
-</body>
+    <!-- FOOTER -->
+    <footer class="bg-gray-100 text-center py-6 text-sm text-gray-500">
+      © 2025 Tu Proyecto. Todos los derechos reservados.
+    </footer>
+  </body>
 </html>
