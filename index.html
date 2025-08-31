@@ -8,69 +8,80 @@
 </head>
 <body class="bg-white text-gray-800">
 
-<!-- HERO -->
-<section class="relative h-screen bg-cover bg-center flex items-center justify-center" style="background-image: url(https://img.freepik.com/foto-gratis/sonriente-cuidadora-joven-uniforme-sentada-junto-anciana-contenta-interior-hogar_482257-22400.jpg?w=1480);">
-  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-  <div class="relative z-10 text-center px-4 md:px-10">
-    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-      Apoyando a quienes cuidan<br />cada día con dedicación
-    </h1>
-    <p class="text-lg md:text-xl text-white mb-8">
-      Mejoramos las condiciones de los cuidadores profesionales y familiares con soluciones innovadoras.
+  <!-- HERO -->
+  <section class="relative h-screen bg-cover bg-center flex items-center justify-center"
+    style="background-image: url('https://images.unsplash.com/photo-1725870953863-4ad4db0acfc2?w=1000&auto=format&fit=crop&q=80');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative z-10 text-center px-4 md:px-10">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        Apoyando a quienes cuidan<br />cada día con dedicación
+      </h1>
+      <p class="text-lg md:text-xl text-white mb-8">
+        Mejoramos las condiciones de los cuidadores profesionales y familiares con soluciones innovadoras.
+      </p>
+      <a href="#contacto" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition">
+        ¡Quiero saber más!
+      </a>
+    </div>
+  </section>
+
+  <!-- NUESTRA MISIÓN -->
+  <section class="py-16 px-6 md:px-20 bg-gray-50 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Nuestra misión</h2>
+    <p class="text-lg max-w-3xl mx-auto text-gray-700">
+      Ayudamos a mejorar el día a día de cuidadores y cuidadoras, facilitando recursos, herramientas y apoyo emocional
+      para afrontar sus retos con mayor bienestar y calidad de vida.
     </p>
-    <a href="#contacto" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition">
-      ¡Quiero saber más!
-    </a>
-  </div>
-</section>
+    <div class="mt-12 grid md:grid-cols-3 gap-8">
+      <img class="w-full h-64 object-cover rounded-xl shadow-lg"
+        src="https://images.unsplash.com/photo-1725870953863-4ad4db0acfc2?w=500&auto=format&fit=crop&q=60"
+        alt="Cuidadora 1, sonriendo" />
+      <img class="w-full h-64 object-cover rounded-xl shadow-lg"
+        src="https://images.unsplash.com/photo-1611235898661-17a251450a2a?w=500&auto=format&fit=crop&q=60"
+        alt="Cuidadora 2, actuando" />
+      <img class="w-full h-64 object-cover rounded-xl shadow-lg"
+        src="https://images.unsplash.com/photo-1603398938378-3482f00fc3d3?auto=format&fit=crop&w=500&q=60"
+        alt="Cuidadora 3, apoyo" />
+    </div>
+  </section>
 
-<!-- SOBRE NOSOTROS -->
-<section class="py-16 px-6 md:px-20 bg-gray-50 text-center">
-  <h2 class="text-3xl md:text-4xl font-bold mb-6">Nuestra misión</h2>
-  <p class="text-lg max-w-3xl mx-auto text-gray-700">
-    Ayudamos a mejorar el día a día de cuidadores y cuidadoras, facilitando recursos, herramientas y apoyo emocional
-    para afrontar sus retos con mayor bienestar y calidad de vida.
-  </p>
-  <div class="mt-12 grid md:grid-cols-3 gap-8">
-    <img class="w-full h-64 object-cover rounded-xl shadow-lg" src="https://img.freepik.com/foto-gratis/cuidadora-profesional-hablando-mujer-mayor-sonriente-salon_482257-22408.jpg?w=1480" alt="Cuidadora 1" />
-    <img class="w-full h-64 object-cover rounded-xl shadow-lg" src="https://img.freepik.com/foto-gratis/enfermera-apoya-mujer-mayor-silla-ruedas_1157-47929.jpg?w=1480" alt="Cuidadora 2" />
-    <img class="w-full h-64 object-cover rounded-xl shadow-lg" src="https://img.freepik.com/foto-gratis/cuidadora-femenina-ayudando-anciana-caminar-salon_482257-22407.jpg?w=1480" alt="Cuidadora 3" />
-  </div>
-</section>
+  <!-- FORMULARIO DE CONTACTO -->
+  <section id="contacto" class="py-20 px-6 md:px-20 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Contáctanos</h2>
+      <form action="#" method="POST" class="space-y-6 bg-gray-100 p-8 rounded-xl shadow-lg">
+        <div>
+          <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+          <input type="email" id="email" name="email" required
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500" />
+        </div>
+        <div>
+          <label for="mensaje" class="block text-sm font-medium text-gray-700">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition">
+            Enviar mensaje
+          </button>
+        </div>
+      </form>
+      <p class="text-center mt-6 text-sm text-gray-500">
+        También puedes escribirnos directamente a
+        <a href="mailto:amgseosem@gmail.com" class="underline text-blue-600">amgseosem@gmail.com</a>
+      </p>
+    </div>
+  </section>
 
-<!-- FORMULARIO DE CONTACTO -->
-<section id="contacto" class="py-20 px-6 md:px-20 bg-white">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Contáctanos</h2>
-    <form action="#" method="POST" class="space-y-6 bg-gray-100 p-8 rounded-xl shadow-lg">
-      <div>
-        <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500" />
-      </div>
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-        <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500" />
-      </div>
-      <div>
-        <label for="mensaje" class="block text-sm font-medium text-gray-700">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500"></textarea>
-      </div>
-      <div class="text-center">
-        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition">
-          Enviar mensaje
-        </button>
-      </div>
-    </form>
-    <p class="text-center mt-6 text-sm text-gray-500">
-      También puedes escribirnos directamente a <a href="mailto:amgseosem@gmail.com" class="underline text-blue-600">amgseosem@gmail.com</a>
-    </p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gray-100 text-center py-6 text-sm text-gray-500">
-  © 2025 Tu Proyecto. Todos los derechos reservados.
-</footer>
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 text-center py-6 text-sm text-gray-500">
+    © 2025 Tu Proyecto. Todos los derechos reservados.
+  </footer>
 
 </body>
 </html>
